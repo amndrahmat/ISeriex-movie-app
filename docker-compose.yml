@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  app:
+    container_name: react-ISeriex-app
+    image: react-ISeriex-app
+    build:
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 3001:3000
