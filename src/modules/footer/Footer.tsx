@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Button } from "@material-tailwind/react";
+import Button from "../../shared/Button/Button";
 import useMediaQuery from "../../shared/MediaQueryHook/MediaQuery";
 import { GlobalMovieContext } from "../../shared/GlobalContext/GlobalContext";
 import { useLocation } from "react-router-dom";
@@ -15,11 +15,7 @@ const Footer = () => {
     <div className={pathname !== "/" ? "bg-background-dark" : "bg-black"}>
       <div className="flex justify-center flex-col items-center p-5">
         <Link to="/">
-          <img
-            style={{width: "280px"}}
-            src={logo}
-            alt="logo"
-          ></img>
+          <img style={{ width: "280px" }} src={logo} alt="logo"></img>
         </Link>
         <p
           className={
@@ -33,25 +29,15 @@ const Footer = () => {
         </p>
 
         <div className="flex justify-center ">
-          <Button
-            size="sm"
-            variant="filled"
-            className="text-white font-medium	font-sans mr-4 text-sm normal-case text-ellipsis bg-[#4c5a67] overflow-hidden hover:bg-[#3A68DE] duration-300"
-          >
+          <Button className="text-white font-medium	font-sans mr-4 text-sm normal-case text-ellipsis bg-[#4c5a67] overflow-hidden hover:bg-[#3A68DE] duration-300">
             See what's new
           </Button>
 
-          <Button
-            size="sm"
-            variant="filled"
-            className="text-white font-medium	font-sans mr-4 text-sm normal-case text-ellipsis bg-[#4c5a67] overflow-hidden hover:bg-[#3A68DE] duration-300"
-          >
+          <Button className="text-white font-medium	font-sans mr-4 text-sm normal-case text-ellipsis bg-[#4c5a67] overflow-hidden hover:bg-[#3A68DE] duration-300">
             View and filter
           </Button>
         </div>
         <Button
-          size="sm"
-          variant="text"
           className={
             isMobile && pathname !== "/"
               ? "text-white font-medium	font-sans mr-4 text-sm normal-case border mt-4 border-orange-400 bg-transparent text-ellipsis overflow-hidden"

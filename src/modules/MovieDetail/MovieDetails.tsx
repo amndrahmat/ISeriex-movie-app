@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalMovieContext } from "../../shared/GlobalContext/GlobalContext";
 import WrapperContainer from "../../shared/WrapperContainer/WrapperContainer";
-import { Button } from "@material-tailwind/react";
+import Button from "../../shared/Button/Button";
 import useMediaQuery from "../../shared/MediaQueryHook/MediaQuery";
 import { FaVoteYea } from "react-icons/fa";
 import { IoPeople } from "react-icons/io5";
@@ -77,7 +77,6 @@ const MovieDetails = () => {
                 } `}
                 alt={state?.movieDetails?.title}
               ></img>
-              
             </div>
             <div className="pl-8 pb-8">
               <p className="text-[#3A69DF] font-sans font-medium text-m leading-4 uppercase">
@@ -94,8 +93,6 @@ const MovieDetails = () => {
               <p className="text-[#3A69DF] font-sans font-medium text-m leading-4 uppercase">
                 Language: <br></br>
                 <Button
-                  size="sm"
-                  variant="outlined"
                   className={
                     "text-center w-20 font-sans text-lg text-white normal-case border border-white mt-1 rounded-lg p-2"
                   }
@@ -138,7 +135,7 @@ const MovieDetails = () => {
                     </div>
                   )
               )}
-              
+
               <div
                 className={
                   isMobile
@@ -245,9 +242,6 @@ const MovieDetails = () => {
               <br></br>
               <Button
                 onClick={() => addToFavorites(state?.movieDetails)}
-                variant="outlined"
-                size="sm"
-                ripple={false}
                 className="flex items-center text-yellow-800 border border-yellow-800 text-lg normal-case outline-none"
               >
                 <span>

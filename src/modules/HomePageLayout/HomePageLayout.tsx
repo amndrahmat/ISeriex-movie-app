@@ -1,6 +1,6 @@
 import React from "react";
 import homeHeader from "../../assets/images/homeHeader.png";
-import { Button } from "@material-tailwind/react";
+import Button from "../../shared/Button/Button";
 import { Link } from "react-router-dom";
 import useMediaQuery from "../../shared/MediaQueryHook/MediaQuery";
 
@@ -32,7 +32,8 @@ const HomePageLayout = () => {
                   : "font-sans text-xl font-normal whitespace-nowrap text-[#999c9f] leading-normal pt-8"
               }
             >
-              ISerieX can help you find the best place to stream new, popular, and upcoming content.
+              ISerieX can help you find the best place to stream new, popular,
+              and upcoming content.
             </p>
           </div>
           <div
@@ -45,9 +46,6 @@ const HomePageLayout = () => {
             <div>
               <Link to="/discovery">
                 <Button
-                  size="sm"
-                  variant="filled"
-                  ripple={false}
                   className={
                     isMobile
                       ? "text-white font-medium px-6 py-4	font-sans mr-4 text-base normal-case rounded-lg text-ellipsis bg-[#3A68DE] overflow-hidden"
@@ -60,10 +58,7 @@ const HomePageLayout = () => {
             </div>
             <div>
               <Button
-                size="sm"
-                variant="outlined"
                 color="gray"
-                ripple={false}
                 className={
                   isMobile
                     ? "text-white font-medium px-6 py-4 mt-4 font-sans text-base normal-case rounded-lg text-ellipsis bg-transparent overflow-hidden"

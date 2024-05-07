@@ -3,7 +3,7 @@ import WrapperContainer from "../../shared/WrapperContainer/WrapperContainer";
 import { GlobalMovieContext } from "../../shared/GlobalContext/GlobalContext";
 import axios from "axios";
 import { InterceptorContext } from "../../core/ErrorInterceptorContext";
-import { Button } from "@material-tailwind/react";
+import Button from "../../shared/Button/Button";
 import useMediaQuery from "../../shared/MediaQueryHook/MediaQuery";
 
 const FilterComponent = () => {
@@ -96,8 +96,6 @@ const FilterComponent = () => {
               <div key={button.id}>
                 <Button
                   id={button.id}
-                  size="lg"
-                  variant="text"
                   className={
                     active === button.id
                       ? "text-white text-xs flex items-center border border-white rounded-lg"

@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "./Carousel";
-import { Button } from "@material-tailwind/react";
+import Button from "../../shared/Button/Button";
 import { data } from "../../shared/data";
 
 const CarouselWrapper = () => {
@@ -44,8 +44,6 @@ const CarouselWrapper = () => {
                 </div>
                 <div className="py-4">
                   <Button
-                    variant="outlined"
-                    ripple={false}
                     color="gray"
                     className="text-white font-sans normal-case text-m font-light text-ellipsis"
                   >

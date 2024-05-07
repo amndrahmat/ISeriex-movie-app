@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
-import { Card, CardBody, CardFooter } from "@material-tailwind/react";
-import { Button } from "@material-tailwind/react";
+import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import Button from "../shared/Button/Button";
 import { InterceptorContext } from "./ErrorInterceptorContext";
 
 const ErrorDialog = () => {
@@ -46,12 +46,8 @@ const ErrorDialog = () => {
               {error?.response?.data?.status_message}
             </p>
           </CardBody>
-          <CardFooter
-            divider
-            className="flex items-center justify-center py-4 bg-background-dark border-2 border-white"
-          >
+          <CardFooter className="flex items-center justify-center py-4 bg-background-dark border-2 border-white">
             <Button
-              size="lg"
               className="bg-white text-background-dark rounded-xl"
               onClick={closeModal}
             >

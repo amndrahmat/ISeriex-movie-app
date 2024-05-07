@@ -6,15 +6,16 @@ import { InterceptorContext } from "../../core/ErrorInterceptorContext";
 import useMediaQuery from "../../shared/MediaQueryHook/MediaQuery";
 import { Link } from "react-router-dom";
 import { GlobalMovieContext } from "../../shared/GlobalContext/GlobalContext";
-import { Tooltip } from "@material-tailwind/react";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
-interface MovieRowProps {
+type MovieRowProps = {
   title: string;
   movieApiUrl: string;
   grid: boolean;
-}
+};
 
-const MovieRow = ({ title, movieApiUrl, grid }: MovieRowProps) => {
+const MovieRow = (props: MovieRowProps) => {
   const isTablet = useMediaQuery("(max-width: 768px)");
   const isMobile = useMediaQuery("(max-width: 540px)");
   const [movieData, setMovieData] = useState<any[]>([]);
@@ -33,7 +34,7 @@ const MovieRow = ({ title, movieApiUrl, grid }: MovieRowProps) => {
   useEffect(() => {
     const getMovies = async () => {
       try {
-        const response = await axios.get(movieApiUrl);
+        const response = await axios.get(props.movieApiUrl);
         const data = await response.data.results;
         setMovieData(data);
       } catch (err) {
@@ -45,11 +46,11 @@ const MovieRow = ({ title, movieApiUrl, grid }: MovieRowProps) => {
     };
 
     getMovies();
-  }, [handleAddError, movieApiUrl]);
+  }, [handleAddError, props.movieApiUrl]);
 
   return (
     <WrapperContainer singlePage={false}>
-      {grid ? (
+      {props.grid ? (
         <div
           className={
             isTablet ? "grid grid-cols-3 justify-start" : "grid grid-cols-5"
@@ -81,10 +82,10 @@ const MovieRow = ({ title, movieApiUrl, grid }: MovieRowProps) => {
           })}
         </div>
       ) : (
-        movieApiUrl && (
+        props.movieApiUrl && (
           <div className="">
             <h3 className="text-white font-sans font-black text-3xl leading-10 pb-4">
-              {title}
+              {props.title}
             </h3>
             <div>
               <Carousel movieRow={true} show={6}>
@@ -93,7 +94,7 @@ const MovieRow = ({ title, movieApiUrl, grid }: MovieRowProps) => {
                     <div key={movie.id} className="flex flex-col">
                       <Tooltip
                         content={movie.title || movie.original_name}
-                        placement="bottom"
+                        id="my-tooltip"
                       >
                         <div
                           className={

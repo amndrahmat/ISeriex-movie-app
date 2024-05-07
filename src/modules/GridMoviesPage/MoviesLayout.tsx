@@ -5,7 +5,7 @@ import axios from "axios";
 import Spinner from "../../shared/Spinner/Spinner";
 import { Link } from "react-router-dom";
 import { InterceptorContext } from "../../core/ErrorInterceptorContext";
-import { Button } from "@material-tailwind/react";
+import Button from "../../shared/Button/Button";
 import useMediaQuery from "../../shared/MediaQueryHook/MediaQuery";
 import { Alert } from "@material-tailwind/react";
 import { FaHeart } from "react-icons/fa";
@@ -145,8 +145,6 @@ const MoviesLayout = () => {
                     </Link>
                     {isTablet ? (
                       <Button
-                        size="sm"
-                        variant="outlined"
                         onClick={() => handleAddToFavorites(movie)}
                         className={
                           "text-center w-28 font-sans text-xs text-white normal-case border border-white mt-1 rounded-lg p-2"
@@ -156,8 +154,6 @@ const MoviesLayout = () => {
                       </Button>
                     ) : (
                       <Button
-                        size="lg"
-                        variant="outlined"
                         className={
                           "text-center w-100 font-sans text-white normal-case border-white mt-1 rounded-lg p-2"
                         }
