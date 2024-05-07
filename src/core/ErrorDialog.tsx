@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import { Card,  CardBody, CardFooter } from "@nextui-org/card";
 import Button from "../shared/Button/Button";
 import { InterceptorContext } from "./ErrorInterceptorContext";
 
